@@ -1,6 +1,7 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import styles from "./list.module.scss"
+import Item from "./Item";
 
 
 const ListComponent = () => {
@@ -8,10 +9,14 @@ const ListComponent = () => {
     return (
         <ul className={styles.list}>
             {
-                todos.map(todo=> <li
+                todos.map(todo=> <Item
                     key={todo.id}
+                    classNameBtn={styles.btn}
                     className={styles.element}
-                    style={{backgroundColor:`${todo.backGroundColor}`}}>№{todo.id} : {todo.name}</li>
+                    classNameDone={styles.doneElement}
+                    id={todo.id}
+                    name ={todo.name}
+                    style={{backgroundColor:`${todo.backGroundColor}`}}/>
                 )
             }
         </ul>

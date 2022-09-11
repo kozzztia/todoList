@@ -1,7 +1,7 @@
 import React from 'react';
 import {changeInputValueAction , getNewTodoAndClearInputThunk} from "../store/store";
 import {useDispatch, useSelector} from "react-redux";
-import {randomColor} from "../support";
+import {idGenerator, randomColor} from "../support";
 import styles from "./InputForm.module.scss"
 
 
@@ -17,7 +17,7 @@ const InputForm = () => {
                   dispatch(getNewTodoAndClearInputThunk(
                       {
                           name: inputValue,
-                          id: todos.length +1,
+                          id: idGenerator(),
                           backGroundColor : randomColor(),
                           }
                   ))

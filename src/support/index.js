@@ -1,6 +1,6 @@
 
 
-const randomNumber =(max,min)=>{
+const randomNumber =(min,max)=>{
     return  Math.floor(Math.random()* (max-min) + min)
 }
 
@@ -10,5 +10,8 @@ export const randomColor = () =>{
     ${randomNumber(0,255)},
     ${randomNumber(0,255)})`
     return color
-
+}
+let id = 1;
+export const idGenerator = () => {
+    return id++
 }
